@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'logic.dart';
+import 'settings_page.dart';
 //import 'package:rflutter_alert/rflutter_alert.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -57,7 +58,9 @@ class _MyHomePageState extends State<MyHomePage> {
             return IconButton(
               icon: const Icon(Icons.menu),
               onPressed: () {
-                Scaffold.of(context).openDrawer();
+                //Scaffold.of(context).openDrawer();
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SettingsScreen()));
               },
               tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
             );
