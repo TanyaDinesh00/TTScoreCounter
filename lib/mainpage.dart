@@ -76,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   CircleAvatar(
                     backgroundColor: Colors.blue[600],
                     radius: 40,
-                    backgroundImage: AssetImage('images/a.jpg'),
+                    backgroundImage: AssetImage('images/b.jpg'),
                   ),
                   Text(
                     'Game ' + s.get_game(),
@@ -85,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   CircleAvatar(
                     radius: 40,
                     backgroundColor: Colors.red[600],
-                    backgroundImage: AssetImage('images/b.jpg'),
+                    backgroundImage: AssetImage('images/a.jpg'),
                   ),
                 ],
               ),
