@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'logic.dart';
 import 'settings_page.dart';
+import 'ReusableCard.dart';
 //import 'package:rflutter_alert/rflutter_alert.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -44,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
         s.reset();
       }
       if (n == 4) {
-        s.HardReset();
+        s.hardReset();
       }
     });
   }
@@ -93,9 +94,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
             ), // Faces and game number
-//            SizedBox(
-//              height: 5,
-//            ),
             Expanded(
               child: Container(
                 margin: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
@@ -228,77 +226,19 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ), // Scores
             Expanded(
-              child: Container(
-                margin: EdgeInsets.all(20),
-                padding: EdgeInsets.all(15),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Color(0xFF1D1E33),
-                ),
-                child: Center(
-                  child: Text(
-                    s.get_rounds(),
-                    style: TextStyle(fontSize: 27, color: Colors.white),
-                  ),
-                ),
-              ),
+              child: ReusableCard(text: s.get_rounds()),
             ), // ScoreTab
-
-//            Text(
-//              s.get_vic(),
-//              style: TextStyle(fontSize: 27, color: Colors.white),
-//            ), // victory
-//            SizedBox(height: 20),
-//            Row(
-//              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//              children: <Widget>[
-//                new FlatButton(
-//                  onPressed: () {
-//                    if (!s.s_end) {
-//                      buttonAction(1);
-//                    }
-//                  },
-//                  shape: RoundedRectangleBorder(
-//                      borderRadius: BorderRadius.all(Radius.circular(16.0))),
-//                  child: new Icon(
-//                    Icons.add,
-//                    color: Colors.black,
-//                  ),
-//                  padding: EdgeInsets.all(50.0),
-//                  color: Colors.blue,
-//                ),
-//                new FlatButton(
-//                  onPressed: () {
-//                    if (!s.s_end) {
-//                      buttonAction(2);
-//                    }
-//                  },
-//                  shape: RoundedRectangleBorder(
-//                      borderRadius: BorderRadius.all(Radius.circular(16.0))),
-//                  child: new Icon(
-//                    Icons.add,
-//                    color: Colors.black,
-//                  ),
-//                  padding: EdgeInsets.all(50.0),
-//                  color: Colors.red,
-//                ),
-//              ],
-//            ), // Buttons
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          if (!s.s_end) {
-            buttonAction(3);
-          }
+          buttonAction(3);
         },
         child: GestureDetector(
           child: Text('Reset'),
           onLongPress: () {
-            if (!s.s_end) {
-              buttonAction(4);
-            }
+            buttonAction(4);
           },
         ),
       ),

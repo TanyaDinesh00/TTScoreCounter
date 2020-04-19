@@ -5,10 +5,9 @@ class Score {
   int serve = 1, count = 0;
   int game = 1, won1 = 0, won2 = 0;
   bool s_end = false;
-  bool justwon = false;
+  //bool justwon = false;
 
-  void HardReset() {
-    reset();
+  void hardReset() {
     game = 0;
     won1 = 0;
     won2 = 0;
